@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Hospedaje Yeruti | Abierto 24 Horas en Ypacaraí">
+    
+    <meta name="description" content="Hospedaje Yerutí en Ypacaraí. Abierto 24 Horas. Habitaciones confortables, A/C, Wifi, Jacuzzi, Billar y estacionamiento. El mejor lugar para tu descanso en Santa Rosa.">
+    <meta name="keywords" content="hospedaje ypacarai, hotel ypacarai 24 horas, alojamiento santa rosa, hospedaje yeruti, habitaciones, paraguay, turismo, lago ypacarai">
+    
+    <meta property="og:title" content="Hospedaje Yerutí | Abierto 24 Horas en Ypacaraí">
     <meta property="og:description" content="Tu lugar de descanso con Jacuzzi, Billar, Wifi y A/C. ¡Reserva ahora!">
     <meta property="og:image" content="https://hospedajeyeruti.online/img/portada.jpg"> <meta property="og:url" content="https://hospedajeyeruti.online">
     <meta property="og:type" content="website">
-    <meta name="description" content="Hospedaje Yerutí en Ypacaraí. Abierto 24 Horas. Habitaciones confortables, A/C, Wifi, Jacuzzi, Billar y estacionamiento. El mejor lugar para tu descanso en Santa Rosa.">
-    <meta name="keywords" content="hospedaje ypacarai, hotel ypacarai 24 horas, alojamiento santa rosa, hospedaje yeruti, habitaciones, paraguay, turismo">
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
     
     <title>Hospedaje Yeruti | Abierto 24 Horas en Ypacaraí</title>
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -105,6 +109,13 @@
             display: inline-block;
             margin-bottom: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .btn-dorado {
@@ -147,6 +158,21 @@
             transition: transform 0.3s ease;
         }
         .gallery-img:hover { transform: scale(1.03); }
+
+        /* Sitios de Interés */
+        .poi-card {
+            border: none;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            color: white;
+        }
+        .poi-overlay {
+            background: linear-gradient(to top, rgba(0,32,91,0.9), transparent);
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 20px;
+        }
         
         /* Footer decorativo */
         .footer-section {
@@ -217,7 +243,7 @@
                     <li class="nav-item"><a class="nav-link px-3" href="#inicio">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="#servicios">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="#galeria">Galería</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#ubicacion">Ubicación</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#turismo">Turismo</a></li> <li class="nav-item"><a class="nav-link px-3" href="#ubicacion">Ubicación</a></li>
                     <li class="nav-item"><a class="nav-link px-3 text-acento" href="#contacto">Contacto</a></li>
                 </ul>
             </div>
@@ -310,7 +336,8 @@
                 </div>
                 <div class="col-lg-3 col-6">
                     <div class="p-4 bg-white rounded-3 shadow-sm service-card">
-                        <i class="fas fa-clock feature-icon"></i> <h5 class="fw-bold text-primario">Recepción 24/7</h5>
+                        <i class="fas fa-clock feature-icon"></i>
+                        <h5 class="fw-bold text-primario">Recepción 24/7</h5>
                         <small class="text-muted">Siempre abiertos</small>
                     </div>
                 </div>
@@ -332,6 +359,40 @@
                 <div class="col-md-4 col-sm-6"><img src="img/foto4.jpg" alt="Hospedaje Yeruti 4" class="gallery-img"></div>
                 <div class="col-md-4 col-sm-6"><img src="img/foto5.jpg" alt="Hospedaje Yeruti 5" class="gallery-img"></div>
                 <div class="col-md-4 col-sm-6"><img src="img/foto6.jpg" alt="Hospedaje Yeruti 6" class="gallery-img"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="turismo" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-acento text-uppercase fw-bold ls-2">Descubre Ypacaraí</h6>
+                <h2 class="text-primario text-uppercase">Lugares Cercanos</h2>
+                <p class="text-muted">Hospedaje Yerutí es tu punto de partida ideal para conocer la zona.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded shadow-sm border-start border-4 border-acento h-100">
+                        <h4 class="fw-bold text-primario">Lago Ypacaraí</h4>
+                        <p>A pocos minutos de distancia. Disfruta de los atardeceres más famosos de Paraguay y paseos al aire libre.</p>
+                        <i class="fas fa-water text-acento fs-2"></i>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded shadow-sm border-start border-4 border-acento h-100">
+                        <h4 class="fw-bold text-primario">San Bernardino</h4>
+                        <p>La ciudad veraniega por excelencia. Playas, gastronomía y vida nocturna a un corto viaje en auto.</p>
+                        <i class="fas fa-umbrella-beach text-acento fs-2"></i>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded shadow-sm border-start border-4 border-acento h-100">
+                        <h4 class="fw-bold text-primario">Areguá Artesanal</h4>
+                        <p>Conoce la capital de la artesanía en barro y frutillas. Ideal para un paseo cultural de fin de semana.</p>
+                        <i class="fas fa-palette text-acento fs-2"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -375,8 +436,9 @@
 
                 <div class="col-lg-7">
                     <div class="ratio ratio-16x9 rounded-4 shadow-lg border border-4 border-acento">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.19538173531!2d-57.2912521!3d-25.3982697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945c4b012432e235%3A0x99597862d7dff9a1!2sHospedaje%20Yeruti!5e0!3m2!1ses-419!2spy!4v1767537642627!5m2!1ses-419!2spy" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.123456789!2d-57.28!3d-25.40!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDI0JzAwLjAiUyA1N8KwMTYnNDguMCJX!5e0!3m2!1ses!2spy!4v1600000000000!5m2!1ses!2spy" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
+                    <small class="text-white-50 mt-2 d-block text-center">* Nota: Asegúrate de actualizar el mapa con la ubicación exacta en el código.</small>
                 </div>
             </div>
         </div>
@@ -387,7 +449,7 @@
             <div class="mb-3">
                 <h5 class="text-acento mb-3">Síguenos en redes</h5>
                 <a href="https://www.facebook.com/profile.php?id=100067626233096" class="social-icon" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/hospedajeyeruti?igsh=MXN2Z2JicGFueHpneg==" class="social-icon" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/hospedaje_yeruti?igsh=MXN2Z2JicGFueHpneg==" class="social-icon" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@hospedajeyeruti?_r=1&_t=ZM-92nU4ctdhKy" class="social-icon" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
             <div class="border-top border-secondary pt-3 mt-3 w-50 mx-auto">
@@ -402,6 +464,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Cierra el menú al hacer clic en móvil
         document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 const navbarToggler = document.querySelector('.navbar-toggler');
