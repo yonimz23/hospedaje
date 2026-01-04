@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Hospedaje Yerutí en Ypacaraí. Habitaciones confortables, aire acondicionado, Wifi, Jacuzzi, Billar y estacionamiento. El mejor lugar para tu descanso en Santa Rosa. ¡Reserva hoy!">
+    <meta name="keywords" content="hospedaje ypacarai, hotel ypacarai, alojamiento santa rosa, hospedaje yeruti, habitaciones, paraguay, turismo">
+    
+    <title>Hospedaje Yeruti | Tu lugar en Ypacaraí</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- PALETA DE COLORES --- */
+        :root {
+            --color-primario: #00205B; /* Azul Marino */
+            --color-acento: #C4A473;   /* Dorado */
+            --color-fondo: #F8F9FA;    /* Gris muy claro */
+            --color-texto: #333333;
+            --font-principal: 'Montserrat', sans-serif;
+            --font-cursiva: 'Dancing Script', cursive;
+            --font-texto: 'Open Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-texto);
+            color: var(--color-texto);
+            background-color: var(--color-fondo);
+        }
+
+        h1, h2, h3, h4, h5, .navbar-brand, .btn {
+            font-family: var(--font-principal);
+            font-weight: 700;
+        }
+
+        .text-acento { color: var(--color-acento) !important; }
+        .text-primario { color: var(--color-primario) !important; }
+
+        /* Estilos de Marca */
+        .brand-yeruti {
+            font-family: var(--font-cursiva);
+            color: var(--color-acento);
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+        .navbar-brand span.hospedaje {
+            text-transform: uppercase;
+            font-weight: 700;
+            color: white;
+            border-bottom: 2px solid var(--color-acento);
+            padding-bottom: 2px;
+            margin-right: 5px;
+        }
+
+        .navbar {
+            background-color: var(--color-primario) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        /* PORTADA (HERO) */
+        .hero-section {
+            background-color: var(--color-primario);
+            padding-top: 140px; 
+            padding-bottom: 80px;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-title { font-size: 3rem; margin-bottom: 1rem; }
+        @media (max-width: 768px) { .hero-title { font-size: 2rem; } }
+
+        .hero-eslogan {
+            font-family: var(--font-cursiva);
+            font-size: 2.5rem;
+            color: var(--color-acento);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .btn-dorado {
+            background-color: var(--color-acento);
+            color: var(--color-primario);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .btn-dorado:hover {
+            background-color: #b08d57;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Iconos de servicios */
+        .feature-icon { 
+            font-size: 2.5rem; 
+            color: var(--color-acento);
+            margin-bottom: 1rem; 
+        }
+        .service-card {
+            transition: transform 0.3s ease;
+            height: 100%;
+            border-top: 4px solid var(--color-acento) !important;
+        }
+        .service-card:hover { transform: translateY(-5px); }
+        
+        /* Galería */
+        .gallery-img { 
+            width: 100%; 
+            height: 250px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover { transform: scale(1.03); }
+        
+        /* Footer decorativo */
+        .footer-section {
+            background-color: var(--color-primario);
+            color: white;
+            position: relative;
+        }
+        .footer-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background-color: var(--color-acento);
+        }
+
+        /* Estilos Redes Sociales en Footer */
+        .social-icon {
+            color: white;
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-icon:hover {
+            color: var(--color-acento);
+            transform: translateY(-3px);
+        }
+
+        /* WhatsApp Flotante */
+        .btn-whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 2px 4px 15px rgba(0,0,0,0.3);
+            z-index: 1050;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-whatsapp-float:hover { 
+            background-color: #128c7e; 
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fas fa-home me-2 text-acento fs-4"></i>
+                <div>
+                    <span class="hospedaje d-block lh-1">HOSPEDAJE</span>
+                    <span class="brand-yeruti lh-1">Yeruti</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase fw-bold">
+                    <li class="nav-item"><a class="nav-link px-3" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#galeria">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#ubicacion">Ubicación</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-acento" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero-section">
+        <div class="container">
+            <h1 class="hero-title text-uppercase">
+                Bienvenidos a <br>
+                Hospedaje <span class="text-acento brand-yeruti" style="font-size: 1.2em;">Yeruti</span>
+            </h1>
+            
+            <p class="hero-eslogan">El lugar perfecto para ti....!</p>
+            
+            <p class="hero-description">
+                Disfruta de una estadía inolvidable en nuestras amplias instalaciones. 
+                Contamos con <strong>más de 10 habitaciones</strong> totalmente equipadas, balcones con vistas, 
+                y áreas de recreación con <strong>mesa de billar y jacuzzi</strong> para tu relax total. 
+                Además, ofrecemos venta de bebidas y artículos básicos para tu mayor comodidad.
+                <br>¡Tu descanso asegurado en el corazón de Ypacaraí!
+            </p>
+
+            <a href="https://wa.me/595981811246?text=Hola,%20quisiera%20consultar%20disponibilidad%20en%20Hospedaje%20Yeruti" target="_blank" class="btn btn-dorado mt-3">
+                <i class="fab fa-whatsapp me-2"></i> Consultar Disponibilidad
+            </a>
+        </div>
+    </header>
+
+    <section id="servicios" class="py-5">
+        <div class="container text-center my-5">
+            <h6 class="text-acento text-uppercase fw-bold ls-2">Comodidades</h6>
+            <h2 class="mb-5 text-primario text-uppercase">Todo lo que necesitas</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-6">
+                    <div class="p-4 bg-white rounded-3 shadow-sm service-card">
+                        <i class="fas fa-bed feature-icon"></i>
+                        <h5 class="fw-bold text-primario">+10 Habitaciones</h5>
+                        <small class="text-muted">Espacio para todos</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="p-4 bg-white rounded-3 shadow-sm service-card">
+                        <i class="fas fa-hot-tub-person feature-icon"></i>
+                        <h5 class="fw-bold text-primario">Jacuzzi</h5>
+                        <small class="text-muted">Zona de Relax</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="p-4 bg-white rounded-3 shadow-sm service-card">
+                        <i class="fas fa-gamepad feature-icon"></i>
+                        <h5 class="fw-bold text-primario">Mesa de Billar</h5>
+                        <small class="text-muted">Entretenimiento</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="p-4 bg-white rounded-3 shadow-sm service-card">
+                        <i class="fas fa-wine-bottle feature-icon"></i>
+                        <h5 class="fw-bold text-primario">Bebidas y Varios</h5>
+                        <small class="text-muted">Minimarket interno</small>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <div class="p-4 bg-white rounded-3 shadow-sm service-card">
+                        <i class="fas fa-door-open feature-icon"></i>
+                        <h5 class="fw-bold text-primario">Balcón</h5>
+                        <small class="text-muted">Aire libre</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="p-4 bg-white rounded-3 shadow-sm service-card">
+                        <i class="fas fa-wifi feature-icon"></i>
+                        <h5 class="fw-bold text-primario">Wi-Fi Gratis</h5>
+                        <small class="text-muted">Alta velocidad</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="p-4 bg-white rounded-3 shadow-sm service-card">
+                        <i class="fas fa-snowflake feature-icon"></i>
+                        <h5 class="fw-bold text-primario">Aire Acondicionado</h5>
+                        <small class="text-muted">Climatización</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="p-4 bg-white rounded-3 shadow-sm service-card">
+                        <i class="fas fa-car feature-icon"></i>
+                        <h5 class="fw-bold text-primario">Estacionamiento</h5>
+                        <small class="text-muted">Seguro y privado</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-5 bg-white">
+        <div class="container my-5">
+            <div class="text-center mb-5">
+                <h6 class="text-acento text-uppercase fw-bold ls-2">Nuestro Espacio</h6>
+                <h2 class="text-primario text-uppercase">Galería de Fotos</h2>
+            </div>
+            
+            <div class="row g-3">
+                <div class="col-md-4 col-sm-6"><img src="img/foto1.jpg" alt="Hospedaje Yeruti 1" class="gallery-img"></div>
+                <div class="col-md-4 col-sm-6"><img src="img/foto2.jpg" alt="Hospedaje Yeruti 2" class="gallery-img"></div>
+                <div class="col-md-4 col-sm-6"><img src="img/foto3.jpg" alt="Hospedaje Yeruti 3" class="gallery-img"></div>
+                <div class="col-md-4 col-sm-6"><img src="img/foto4.jpg" alt="Hospedaje Yeruti 4" class="gallery-img"></div>
+                <div class="col-md-4 col-sm-6"><img src="img/foto5.jpg" alt="Hospedaje Yeruti 5" class="gallery-img"></div>
+                <div class="col-md-4 col-sm-6"><img src="img/foto6.jpg" alt="Hospedaje Yeruti 6" class="gallery-img"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ubicacion" class="footer-section py-5" id="contacto">
+        <div class="container mt-4">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="mb-4">
+                        <span class="h4 fw-bold text-uppercase border-bottom border-acento pb-1">HOSPEDAJE</span>
+                        <span class="brand-yeruti ms-2" style="font-size: 2.5rem;">Yeruti</span>
+                    </div>
+                    <p class="hero-eslogan text-white mb-5 fs-4">El lugar perfecto para ti....!</p>
+                    
+                    <div class="d-flex mb-4">
+                        <i class="fas fa-map-marker-alt text-acento fs-3 me-3 mt-1"></i>
+                        <div>
+                            <h6 class="text-acento text-uppercase fw-bold mb-2">Dirección</h6>
+                            <p class="mb-0 fs-5">Yegros y Benjamín Aceval,<br>Santa Rosa - Ypacaraí - Paraguay</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <i class="fab fa-whatsapp text-acento fs-2 me-3"></i>
+                        <div>
+                            <h6 class="text-acento text-uppercase fw-bold mb-1">Reservas & Consultas</h6>
+                            <a href="https://wa.me/595981811246" target="_blank" class="text-white fs-3 fw-bold text-decoration-none">
+                                (0981) 811 246
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="ratio ratio-16x9 rounded-4 shadow-lg border border-4 border-acento">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.19538173531!2d-57.2912521!3d-25.3982697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945c4b012432e235%3A0x99597862d7dff9a1!2sHospedaje%20Yeruti!5e0!3m2!1ses-419!2spy!4v1767537642627!5m2!1ses-419!2spy" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-center py-4 text-white">
+        <div class="container">
+            <div class="mb-3">
+                <h5 class="text-acento mb-3">Síguenos en redes</h5>
+                <a href="https://www.facebook.com/profile.php?id=100067626233096" class="social-icon" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/hospedaje_yeruti?igsh=MXN2Z2JicGFueHpneg==" class="social-icon" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@hospedajeyeruti?_r=1&_t=ZM-92nU4ctdhKy" class="social-icon" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="border-top border-secondary pt-3 mt-3 w-50 mx-auto">
+                <small class="text-white-50">© 2026 Hospedaje Yeruti. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/595981811246?text=Hola,%20quisiera%20más%20información%20sobre%20Hospedaje%20Yeruti" class="btn-whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarToggler = document.querySelector('.navbar-toggler');
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (getComputedStyle(navbarToggler).display !== 'none' && navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
